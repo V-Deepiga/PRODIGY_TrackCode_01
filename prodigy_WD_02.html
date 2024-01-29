@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stopwatch</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('https://motionarray.imgix.net/preview-170167-d1YHoHEDHo-high_0008.jpg?w=660&q=60&fit=max&auto=format');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      color: white; /* Text color */
+    }
+
+    .stopwatch {
+      text-align: center;
+      margin-left: auto; /* Align to left-center */
+      margin-right: auto;
+    }
+
+    .display {
+      font-size: 2em;
+      margin-bottom: 10px;
+     
+    }
+
+    .labels {
+      font-size: 1em;
+      margin-bottom: 5px;
+    }
+
+    button {
+      font-size: 1em;
+      margin: 5px;
+      padding: 8px 15px;
+      color: white; /* Button text color */
+      background-color: #333; /* Button background color */
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #555; /* Button background color on hover */
+    }
+
+    .laps {
+      list-style-type: none;
+      padding: 0;
+      margin: 10px 0;
+    }
+
+    .logo {
+      max-width: 10%;
+      height: auto;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="stopwatch">
+    <img class="logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Stopwatch.svg/1200px-Stopwatch.svg.png" alt="Logo">
+    <div class="labels">
+      <span>Hours</span>
+      <span>Minutes</span>
+      <span>Seconds</span>
+    </div>
+    <div class="display">00:00:00</div>
+    <button onclick="startStopwatch()">Start</button>
+    <button onclick="pauseStopwatch()">Pause</button>
+    <button onclick="resetStopwatch()">Reset</button>
+    <button onclick="lap()">Lap</button>
+    <ul class="laps"></ul>
+
+    <script>
+      let startTime;
+      let elapsedTime = 0;
+      let isRunning = false;
+      let lapCount = 1;
+      let timerId;
+
+      function startStopwatch() {
+        if (!isRunning) {
+          isRunning = true;
+          startTime = Date.now() - elapsedTime;
+          updateDisplay();
+        }
+      }
+
+      function pauseStopwatch() {
+        if (isRunning) {
+          isRunning = false;
+          clearTimeout(timerId);
+          elapsedTime = Date.now() - startTime;
+        }
+      }
+
+      function resetStopwatch() {
+        isRunning = false;
+        elapsedTime = 0;
+        lapCount = 1;
+        updateDisplay();
+        clearLaps();
+      }
+
+      function lap() {
+        if (isRunning) {
+          const lapTime = calculateLapTime();
+          const lapsContainer = document.querySelector('.laps');
+          const lapItem = document.createElement('li');
+          lapItem.textContent = `Lap ${lapCount}: ${formatTime(lapTime)}`;
+          lapsContainer.appendChild(lapItem);
+          lapCount++;
+        }
+      }
+
+      function updateDisplay() {
+        const currentTime = isRunning ? Date.now() - startTime + elapsedTime : elapsedTime;
+        document.querySelector('.display').textContent = formatTime(currentTime);
+        timerId = setTimeout(updateDisplay, 10);
+      }
+
+      function calculateLapTime() {
+        return Date.now() - startTime;
+      }
+
+      function formatTime(time) {
+        const hours = Math.floor(time / 3600000);
+        const minutes = Math.floor((time % 3600000) / 60000);
+        const seconds = Math.floor((time % 60000) / 1000);
+
+        return `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      }
+
+      function clearLaps() {
+        const lapsContainer = document.querySelector('.laps');
+        lapsContainer.innerHTML = '';
+      }
+    </script>
+  </div>
+</body>
+</html>
