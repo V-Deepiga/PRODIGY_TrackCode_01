@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #333;
+      padding: 10px 0;
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav li {
+      margin: 0 15px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      color: #ffcc00;
+    }
+
+    .page-section {
+      display: none;
+      padding: 50px;
+      text-align: center;
+    }
+
+    .page-section img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      const navLinks = document.querySelectorAll('nav a');
+      const pageSections = document.querySelectorAll('.page-section');
+
+      // Change background color on scroll
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          header.style.backgroundColor = '#555';
+        } else {
+          header.style.backgroundColor = '#333';
+        }
+      });
+
+      // Toggle page sections on navigation link click
+      navLinks.forEach((link, index) => {
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          header.style.backgroundColor = '#800080'; // Change to your desired color
+          hideAllSections();
+          showSection(index);
+        });
+      });
+
+      // Function to hide all page sections
+      function hideAllSections() {
+        pageSections.forEach(section => {
+          section.style.display = 'none';
+        });
+      }
+
+      // Function to show a specific page section
+      function showSection(index) {
+        pageSections[index].style.display = 'block';
+      }
+    });
+  </script>
+  <title>Responsive landing page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home Page -->
+  <section id="home" class="page-section" style="background-color: #f0f0f0;">
+    <h2>Home</h2>
+    <img src="https://www.searchenginejournal.com/wp-content/uploads/2019/10/25-of-the-best-examples-of-home-pages-5dc504205de2e.png" alt="Home Image">
+    <!-- Add content specific to the Home page -->
+  </section>
+
+  <!-- About Page -->
+  <section id="about" class="page-section" style="background-color: #e0e0e0;">
+    <h2>About</h2>
+    <img src="https://cdn2.vectorstock.com/i/1000x1000/76/76/about-us-website-landing-page-design-vector-25637676.jpg" alt="About Image">
+    <!-- Add content specific to the About page -->
+  </section>
+
+  <!-- Services Page -->
+  <section id="services" class="page-section" style="background-color: #d0d0d0;">
+    <h2>Services</h2>
+    <img src="https://149854491.v2.pressablecdn.com/wp-content/uploads/2021/09/pathfinder_content_template_services.jpg" alt="Services Image">
+    <!-- Add content specific to the Services page -->
+  </section>
+
+  <!-- Contact Page -->
+  <section id="contact" class="page-section" style="background-color: #c0c0c0;">
+    <h2>Contact</h2>
+    <img src="https://imgscf.slidemembers.com/docs/1/1/426/cloud_service_contact_page_template_425696.jpg" alt="Contact Image">
+    <!-- Add content specific to the Contact page -->
+  </section>
+
+</body>
+</html>
