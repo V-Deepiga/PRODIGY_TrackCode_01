@@ -1,4 +1,4 @@
-![Screenshot (322)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/9c8c21bb-a8d2-4313-9ede-9dd60edc5462)# PRODIGY_WD_01_TO_05
+# PRODIGY_WD_01_to_05
 
 # WEB DEVELOPMENT 
     The aim of this project is to bulid the web applications with the help of technologies like HTML, CSS, JS, etc.. to create an interactive and user-friendly applications.Front-end web development is the development of the graphical user interface of a website, through the use of HTML, CSS, and JavaScript, so that users can view and interact with that website.
