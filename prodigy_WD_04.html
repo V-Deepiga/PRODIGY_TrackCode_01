@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial;
+      color: black;
+      margin: 0;
+    }
+
+    .split {
+      height: 100%;
+      width: 50%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      overflow-x: hidden;
+      padding-top: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      pointer-events: none; /* Disable pointer events on the split container */
+    }
+
+    .left {
+      left: 0%;
+      background-color: #DB7093;
+    }
+
+    div.b {
+      float: left;
+      padding: 15px;
+    }
+
+    h1.a {
+      font-size: 48px;
+      font-weight: bold;
+    }
+
+    .right {
+      right: 0;
+      background-color: #FFE4E1;
+    }
+
+    .centered {
+      text-align: center;
+    }
+
+    .centered img {
+      width: 150px;
+      border-radius: 50%;
+    }
+
+    .main-box-container {
+      position: absolute;
+      top: 150px;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .profile-box {
+      width: 300px;
+      height: 400px;
+      background-color: #FFE4E1;
+      opacity: 0.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      margin-top: auto; /* Move to the bottom */
+    }
+
+    .social-links a {
+      color: black;
+      text-decoration: none;
+      margin: 5px;
+    }
+
+    .external-box-container {
+      position: absolute;
+      top: 150px;
+      right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    .external-profile-box {
+      width: 250px;
+      height: 330px;
+      background-color: #DB7093;
+      opacity: 0.7;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .external-profile-box img {
+      width: 170px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .contact-details {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      text-align: right;
+      color: black; /* Adjust the color as needed */
+    }
+ .title1 {
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      text-align: right;
+      color: black; /* Adjust the color as needed */
+    }
+    .button-container {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+h1.s {
+            text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+        }
+
+    .button {
+      padding: 10px 20px;
+      background-color: #DB7093;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+      animation: scaleUp 1s ease;
+      pointer-events: auto; /* Enable pointer events on the button */
+    }
+
+    .button:hover {
+      background-color: #a64d79;
+    }
+
+    @keyframes scaleUp {
+      0% {
+        transform: scale(0);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes moveBox {
+      0% {
+        margin-left: 0;
+      }
+      100% {
+        margin-left: 50px;
+      }
+    }
+
+    .section {
+      display: none;
+    }
+
+    .visible {
+      display: block;
+    }
+p.solid {border-style: solid;}
+  </style>
+</head>
+<body>
+
+<div class="split left">
+<div class="title1">
+<h1 class="s">My Portfolio Page</h1>
+</div>
+  <div class="centered">
+  </div>
+  <!-- Main Box Container with Animated Margin Box -->
+  <div class="main-box-container">
+    <div class="profile-box">
+      <div class="social-links">
+        <a href="https://in.linkedin.com/">LinkedIn</a>
+        <a href="https://twitter.com/?lang=en">Twitter</a>
+        <a href="https://github.com/">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- External Box Container -->
+  <div class="external-box-container">
+    <div class="external-profile-box">
+      <img src="https://media.istockphoto.com/id/1318482009/photo/young-woman-ready-for-job-business-concept.jpg?s=612x612&w=0&k=20&c=Jc1NcoUMoM78AxPTh9EApaPU2kXh2evb499JgW99b0g=" alt="Avatar women">
+      <h2>V.DEEPIGA</h2>
+      <hr style="width:50%;text-align:left;margin-left:10;color:#FFE4E1">
+      <h2> Web Developer</h2>
+    </div>
+  </div>
+</div>
+
+<div class="split right">
+  <div class="contact-details">
+    <p class="solid"><br/>Contact Details:<br/>
+    Email: your.email@example.com<br/>
+    Phone: +1 (123) 456-7890
+</p>
+  </div>
+  <div class="b">
+    <h1 class="a">Hello</h1>
+    <h4>A Bit About Me</h4>
+    <p>I am an Efficient and knowledgeable coder with skills in HTML, CSS, PHP, and JavaScript programming languages. Coordinated and collaborative team player with attention to detail, graphic design skills, and ability to contribute to code base improvement initiatives and UX improvement projects.</p>
+    <!-- Buttons for different sections -->
+    <button class="button" onclick="showSection('projects')">Projects</button>
+    <button class="button" onclick="showSection('skills')">Skills</button>
+    <button class="button" onclick="showSection('education')">Education</button>
+    <!-- Sections -->
+    <div id="projects" class="section">
+<br/>
+      <h2>Projects</h2>
+<ul>
+      <li>College Management System Application</li>
+	<li>Stop Watch Application</li>
+<li>Profile Application</li>
+</ul>
+    </div>
+    <div id="skills" class="section">
+      <h2>Skills</h2>
+      <ul>
+      <li>HTML</li>
+	<li>CSS</li>
+<li>JavaScript</li>
+<li>JSON</li>
+<li>ReactjS</li>
+<li>SQL</li>
+</ul>
+    </div>
+    <div id="education" class="section">
+      <h2>Education</h2>
+      <p>Completed BTech AI and DS in COimbatore Institute Of Technology with cgpa of 8.9. I have attended many workshop and done many projects in this field.</p>
+<p>I have completed my intern in Prodigy infotech on Web Development</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSection(sectionId) {
+    // Hide all sections
+    var sections = document.querySelectorAll('.section');
+    sections.forEach(function(section) {
+      section.classList.remove('visible');
+    });
+
+    // Show the selected section
+    var selectedSection = document.getElementById(sectionId);
+    if (selectedSection) {
+      selectedSection.classList.add('visible');
+    }
+  }
+</script>
+
+</body>
+</html>
