@@ -29,9 +29,8 @@
 # FILE NAME
   PRODIGY_WD_03.html
 # OUTPUT
-![Screenshot (322)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/0bdc2dbb-9a6d-47e5-ae88-a54ca4d90169)
 ![Screenshot (321)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/07382868-bc4c-4da2-9d2b-8198ad84c058)
-
+![Screenshot (322)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/0bdc2dbb-9a6d-47e5-ae88-a54ca4d90169)
 # TASK-04 (PRODIGY_WD_04) :
      Build a personal portfolio website that showcases your skills, projects, and accomplishments as a web developer. Design an attractive and visually appealing layout that captures visitors' attention. Include a home page with a captivating headline, professional photo, and summary of your skills. Provide an "About Me" section with a detailed background, education, and professional experience. 
 # FILE NAME
