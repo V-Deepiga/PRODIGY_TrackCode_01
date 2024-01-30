@@ -25,10 +25,16 @@
 ![Screenshot (320)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/06957cfe-2aed-49fd-a8fd-04d2ca10db23)
 
 # TASK-03 (PRODIGY_WD_03) :
-  o build a tic-tac-toe web application, you can use HTML, CSS, and JavaScript. By implementing functions to handle user clicks, track game state, and check for winning conditions, you can create an interactive and engaging tic-tac-toe game. With these technologies and functionalities, users can play against each other or against an AI opponent, aiming to get three markers in a row to win the game.
+  To build a tic-tac-toe web application, you can use HTML, CSS, and JavaScript. By implementing functions to handle user clicks, track game state, and check for winning conditions, you can create an interactive and engaging tic-tac-toe game. With these technologies and functionalities, users can play against each other or against an AI opponent, aiming to get three markers in a row to win the game.
 # FILE NAME
   PRODIGY_WD_03.html
 # OUTPUT
 ![Screenshot (322)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/0bdc2dbb-9a6d-47e5-ae88-a54ca4d90169)
 ![Screenshot (321)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/07382868-bc4c-4da2-9d2b-8198ad84c058)
 
+# TASK-04 (PRODIGY_WD_04) :
+     Build a personal portfolio website that showcases your skills, projects, and accomplishments as a web developer. Design an attractive and visually appealing layout that captures visitors' attention. Include a home page with a captivating headline, professional photo, and summary of your skills. Provide an "About Me" section with a detailed background, education, and professional experience. 
+# FILE NAME
+  PRODIGY_WD_04.html
+# OUTPUT
+![Screenshot (323)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/6f5542b0-10ce-4ec6-91a0-b7892b60b987)
