@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/free-vector/blue-cloudy-daylight-background-weather-design_33099-512.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            text-align: center;
+            color: black;
+        }
+
+        #forecastInfo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .forecast-entry {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+
+        .icon {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Weather Forecast App</h1>
+
+<label for="locationInput" style="color:black;">Enter Location:</label>
+<input type="text" id="locationInput" placeholder="Enter city name">
+<button onclick="getForecast()">Get Forecast</button>
+
+<div id="forecastInfo"></div>
+
+<script>
+    function getForecast() {
+        var apiKey = "0df92f7f896c4cf19b5bad5de7c2eff8";
+        var location = document.getElementById("locationInput").value;
+        var apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${apiKey}&units=metric`;
+
+        fetch(apiUrl)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                displayForecast(data);
+            })
+            .catch(error => {
+                console.error('Error fetching forecast data:', error);
+                document.getElementById("forecastInfo").innerHTML = `Error fetching forecast data: ${error.message}`;
+            });
+    }
+
+    function displayForecast(data) {
+        var forecastInfo = document.getElementById("forecastInfo");
+        forecastInfo.innerHTML = '';  // Clear previous forecast data
+
+        // Loop through forecast entries
+        data.list.forEach(entry => {
+            var dateTime = new Date(entry.dt * 1000);  // Convert timestamp to Date object
+            var date = dateTime.toLocaleDateString();
+            var time = dateTime.toLocaleTimeString();
+
+            var forecastEntry = document.createElement("div");
+            forecastEntry.classList.add("forecast-entry");
+
+            var temperatureIcon = '<img class="icon" src="https://img.icons8.com/ios/452/thermometer.png" alt="Temperature">';
+            var humidityIcon = '<img class="icon" src="https://img.icons8.com/material-outlined/452/humidity.png" alt="Humidity">';
+
+            forecastEntry.innerHTML = `
+                <p>${date} ${time}</p>
+                <p>${temperatureIcon} Temperature: ${entry.main.temp}°C</p>
+                <p>${humidityIcon} Humidity: ${entry.main.humidity}%</p>
+                <p>Condition: ${entry.weather[0].description}</p>
+            `;
+
+            forecastInfo.appendChild(forecastEntry);
+        });
+    }
+</script>
+
+</body>
+</html>
