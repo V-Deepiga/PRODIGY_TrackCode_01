@@ -31,9 +31,18 @@
 # OUTPUT
 ![Screenshot (321)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/07382868-bc4c-4da2-9d2b-8198ad84c058)
 ![Screenshot (322)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/0bdc2dbb-9a6d-47e5-ae88-a54ca4d90169)
+
 # TASK-04 (PRODIGY_WD_04) :
      Build a personal portfolio website that showcases your skills, projects, and accomplishments as a web developer. Design an attractive and visually appealing layout that captures visitors' attention. Include a home page with a captivating headline, professional photo, and summary of your skills. Provide an "About Me" section with a detailed background, education, and professional experience. 
 # FILE NAME
   PRODIGY_WD_04.html
 # OUTPUT
 ![Screenshot (323)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/6f5542b0-10ce-4ec6-91a0-b7892b60b987)
+
+# TASK-05 (PRODIGY_WD_05) :
+    Build a web page that fetches weather data from a weather API based on the user's location or a user-inputted location. Display the current weather conditions, temperature, and other relevant information.
+# FILE NAME
+  PRODIGY_WD_05.html
+# OUTPUT
+![Screenshot (324)](https://github.com/V-Deepiga/PRODIGY_WD_01_to_05/assets/157875895/63c2ad1f-7274-4ba6-8f59-db8845b869c7)
+
